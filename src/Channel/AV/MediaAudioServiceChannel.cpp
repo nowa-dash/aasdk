@@ -27,7 +27,7 @@ namespace channel
 namespace av
 {
 
-MediaAudioServiceChannel::MediaAudioServiceChannel(boost::asio::io_service::strand& strand, messenger::IMessenger::Pointer messenger)
+MediaAudioServiceChannel::MediaAudioServiceChannel(boost::asio::strand<boost::asio::io_context::executor_type>& strand, messenger::IMessenger::Pointer messenger)
     : AudioServiceChannel(strand, std::move(messenger), messenger::ChannelId::MEDIA_AUDIO)
 {
 

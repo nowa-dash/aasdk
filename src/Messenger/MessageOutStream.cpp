@@ -27,8 +27,8 @@ namespace aasdk
 namespace messenger
 {
 
-MessageOutStream::MessageOutStream(boost::asio::io_service& ioService, transport::ITransport::Pointer transport, ICryptor::Pointer cryptor)
-    : strand_(ioService)
+MessageOutStream::MessageOutStream(boost::asio::io_context& ioService, transport::ITransport::Pointer transport, ICryptor::Pointer cryptor)
+    : strand_(ioService.get_executor())
     , transport_(std::move(transport))
     , cryptor_(std::move(cryptor))
     , offset_(0)
@@ -39,7 +39,7 @@ MessageOutStream::MessageOutStream(boost::asio::io_service& ioService, transport
 
 void MessageOutStream::stream(Message::Pointer message, SendPromise::Pointer promise)
 {
-    strand_.dispatch([this, self = this->shared_from_this(), message = std::move(message), promise = std::move(promise)]() mutable {
+    strand_.execute([this, self = this->shared_from_this(), message = std::move(message), promise = std::move(promise)]() mutable {
         if(promise_ != nullptr)
         {
             promise->reject(error::Error(error::ErrorCode::OPERATION_IN_PROGRESS));

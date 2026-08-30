@@ -19,6 +19,8 @@
 #pragma once
 
 #include <boost/noncopyable.hpp>
+
+#include <boost/noncopyable.hpp>
 #include <memory>
 #include <google/protobuf/message.h>
 #include <f1x/aasdk/Common/Data.hpp>

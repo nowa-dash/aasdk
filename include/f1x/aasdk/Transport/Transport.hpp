@@ -21,6 +21,7 @@
 #include <list>
 #include <queue>
 #include <boost/asio.hpp>
+#include <boost/noncopyable.hpp>
 #include <f1x/aasdk/Transport/ITransport.hpp>
 #include <f1x/aasdk/Transport/DataSink.hpp>
 
@@ -34,7 +35,7 @@ namespace transport
 class Transport: public ITransport, public std::enable_shared_from_this<Transport>, boost::noncopyable
 {
 public:
-    Transport(boost::asio::io_service& ioService);
+    Transport(boost::asio::io_context& ioService);
 
     void receive(size_t size, ReceivePromise::Pointer promise) override;
     void send(common::Data data, SendPromise::Pointer promise) override;
@@ -53,10 +54,10 @@ protected:
 
     DataSink receivedDataSink_;
 
-    boost::asio::io_service::strand receiveStrand_;
+    boost::asio::strand<boost::asio::io_context::executor_type> receiveStrand_;
     ReceiveQueue receiveQueue_;
 
-    boost::asio::io_service::strand sendStrand_;
+    boost::asio::strand<boost::asio::io_context::executor_type> sendStrand_;
     SendQueue sendQueue_;
 };
 

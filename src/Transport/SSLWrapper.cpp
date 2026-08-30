@@ -40,12 +40,12 @@ SSLWrapper::SSLWrapper()
 
 SSLWrapper::~SSLWrapper()
 {
-    FIPS_mode_set(0);
     ENGINE_cleanup();
+#if (OPENSSL_VERSION_NUMBER < 0x10100000L)
+    FIPS_mode_set(0);
     CONF_modules_unload(1);
     EVP_cleanup();
     CRYPTO_cleanup_all_ex_data();
-#if (OPENSSL_VERSION_NUMBER < 0x10100000L)
     ERR_remove_state(0);
 #endif
     ERR_free_strings();

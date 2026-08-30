@@ -19,6 +19,7 @@
 #pragma once
 
 #include <boost/asio.hpp>
+#include <boost/noncopyable.hpp>
 #include <list>
 #include <f1x/aasdk/Messenger/IMessenger.hpp>
 #include <f1x/aasdk/Messenger/IMessageInStream.hpp>
@@ -36,7 +37,7 @@ namespace messenger
 class Messenger: public IMessenger, public std::enable_shared_from_this<Messenger>, boost::noncopyable
 {
 public:
-    Messenger(boost::asio::io_service& ioService, IMessageInStream::Pointer messageInStream, IMessageOutStream::Pointer messageOutStream);
+    Messenger(boost::asio::io_context& ioService, IMessageInStream::Pointer messageInStream, IMessageOutStream::Pointer messageOutStream);
     void enqueueReceive(ChannelId channelId, ReceivePromise::Pointer promise) override;
     void enqueueSend(Message::Pointer message, SendPromise::Pointer promise) override;
     void stop() override;
@@ -50,8 +51,8 @@ private:
     void rejectReceivePromiseQueue(const error::Error& e);
     void rejectSendPromiseQueue(const error::Error& e);
 
-    boost::asio::io_service::strand receiveStrand_;
-    boost::asio::io_service::strand sendStrand_;
+    boost::asio::strand<boost::asio::io_context::executor_type> receiveStrand_;
+    boost::asio::strand<boost::asio::io_context::executor_type> sendStrand_;
     IMessageInStream::Pointer messageInStream_;
     IMessageOutStream::Pointer messageOutStream_;
 

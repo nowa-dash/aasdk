@@ -20,6 +20,7 @@
 
 #include <utility>
 #include <boost/asio.hpp>
+#include <boost/noncopyable.hpp>
 #include <libusb.h>
 #include <f1x/aasdk/USB/IUSBWrapper.hpp>
 #include <f1x/aasdk/USB/IAOAPDevice.hpp>
@@ -34,13 +35,13 @@ namespace usb
 class AOAPDevice: public IAOAPDevice, boost::noncopyable
 {
 public:
-    AOAPDevice(IUSBWrapper& usbWrapper, boost::asio::io_service& ioService, DeviceHandle handle, const libusb_interface_descriptor* interfaceDescriptor);
+    AOAPDevice(IUSBWrapper& usbWrapper, boost::asio::io_context& ioService, DeviceHandle handle, const libusb_interface_descriptor* interfaceDescriptor);
     ~AOAPDevice() override;
 
     IUSBEndpoint& getInEndpoint() override;
     IUSBEndpoint& getOutEndpoint() override;
 
-    static IAOAPDevice::Pointer create(IUSBWrapper& usbWrapper, boost::asio::io_service& ioService, DeviceHandle handle);
+    static IAOAPDevice::Pointer create(IUSBWrapper& usbWrapper, boost::asio::io_context& ioService, DeviceHandle handle);
 
 private:
     static ConfigDescriptorHandle getConfigDescriptor(IUSBWrapper& usbWrapper, DeviceHandle handle);

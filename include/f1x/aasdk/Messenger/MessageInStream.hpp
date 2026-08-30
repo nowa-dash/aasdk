@@ -18,6 +18,10 @@
 
 #pragma once
 
+#include <map>
+
+#include <boost/noncopyable.hpp>
+
 #include <f1x/aasdk/Transport/ITransport.hpp>
 #include <f1x/aasdk/Messenger/IMessageInStream.hpp>
 #include <f1x/aasdk/Messenger/ICryptor.hpp>
@@ -34,7 +38,7 @@ namespace messenger
 class MessageInStream: public IMessageInStream, public std::enable_shared_from_this<MessageInStream>, boost::noncopyable
 {
 public:
-    MessageInStream(boost::asio::io_service& ioService, transport::ITransport::Pointer transport, ICryptor::Pointer cryptor);
+    MessageInStream(boost::asio::io_context& ioService, transport::ITransport::Pointer transport, ICryptor::Pointer cryptor);
 
     void startReceive(ReceivePromise::Pointer promise) override;
 
@@ -45,10 +49,12 @@ private:
     void receiveFrameSizeHandler(const common::DataConstBuffer& buffer);
     void receiveFramePayloadHandler(const common::DataConstBuffer& buffer);
 
-    boost::asio::io_service::strand strand_;
+    boost::asio::strand<boost::asio::io_context::executor_type> strand_;
     transport::ITransport::Pointer transport_;
     ICryptor::Pointer cryptor_;
-    FrameType recentFrameType_;
+    FrameType thisFrameType_;
+    bool isValidFrame_;
+    std::map<ChannelId, Message::Pointer> messageBuffer_;
     ReceivePromise::Pointer promise_;
     Message::Pointer message_;
 };

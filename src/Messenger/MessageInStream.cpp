@@ -26,8 +26,8 @@ namespace aasdk
 namespace messenger
 {
 
-MessageInStream::MessageInStream(boost::asio::io_service& ioService, transport::ITransport::Pointer transport, ICryptor::Pointer cryptor)
-    : strand_(ioService)
+MessageInStream::MessageInStream(boost::asio::io_context& ioService, transport::ITransport::Pointer transport, ICryptor::Pointer cryptor)
+    : strand_(ioService.get_executor())
     , transport_(std::move(transport))
     , cryptor_(std::move(cryptor))
 {
@@ -36,7 +36,7 @@ MessageInStream::MessageInStream(boost::asio::io_service& ioService, transport::
 
 void MessageInStream::startReceive(ReceivePromise::Pointer promise)
 {
-    strand_.dispatch([this, self = this->shared_from_this(), promise = std::move(promise)]() mutable {
+    strand_.execute([this, self = this->shared_from_this(), promise = std::move(promise)]() mutable {
         if(promise_ == nullptr)
         {
             promise_ = std::move(promise);
@@ -55,7 +55,7 @@ void MessageInStream::startReceive(ReceivePromise::Pointer promise)
         }
         else
         {
-            promise->reject(error::Error(error::ErrorCode::OPERATION_IN_PROGRESS));
+            promise_->reject(error::Error(error::ErrorCode::OPERATION_IN_PROGRESS));
         }
     });
 }
@@ -63,20 +63,34 @@ void MessageInStream::startReceive(ReceivePromise::Pointer promise)
 void MessageInStream::receiveFrameHeaderHandler(const common::DataConstBuffer& buffer)
 {
     FrameHeader frameHeader(buffer);
+    isValidFrame_ = true;
 
-    if(message_ == nullptr)
+    auto bufferedMessage = messageBuffer_.find(frameHeader.getChannelId());
+    if(bufferedMessage != messageBuffer_.end())
     {
+        message_ = std::move(bufferedMessage->second);
+        messageBuffer_.erase(bufferedMessage);
+
+        if(frameHeader.getType() == FrameType::FIRST || frameHeader.getType() == FrameType::BULK)
+        {
+            message_ = std::make_shared<Message>(frameHeader.getChannelId(), frameHeader.getEncryptionType(), frameHeader.getMessageType());
+        }
+    }
+    else
+    {
+        if(frameHeader.getType() == FrameType::MIDDLE || frameHeader.getType() == FrameType::LAST)
+        {
+            isValidFrame_ = false;
+            message_.reset();
+            promise_->reject(error::Error(error::ErrorCode::MESSENGER_INTERTWINED_CHANNELS));
+            promise_.reset();
+            return;
+        }
+
         message_ = std::make_shared<Message>(frameHeader.getChannelId(), frameHeader.getEncryptionType(), frameHeader.getMessageType());
     }
-    else if(message_->getChannelId() != frameHeader.getChannelId())
-    {
-        message_.reset();
-        promise_->reject(error::Error(error::ErrorCode::MESSENGER_INTERTWINED_CHANNELS));
-        promise_.reset();
-        return;
-    }
 
-    recentFrameType_ = frameHeader.getType();
+    thisFrameType_ = frameHeader.getType();
     const size_t frameSize = FrameSize::getSizeOf(frameHeader.getType() == FrameType::FIRST ? FrameSizeType::EXTENDED : FrameSizeType::SHORT);
 
     auto transportPromise = transport::ITransport::ReceivePromise::defer(strand_);
@@ -111,7 +125,7 @@ void MessageInStream::receiveFrameSizeHandler(const common::DataConstBuffer& buf
 }
 
 void MessageInStream::receiveFramePayloadHandler(const common::DataConstBuffer& buffer)
-{   
+{
     if(message_->getEncryptionType() == EncryptionType::ENCRYPTED)
     {
         try
@@ -131,12 +145,20 @@ void MessageInStream::receiveFramePayloadHandler(const common::DataConstBuffer& 
         message_->insertPayload(buffer);
     }
 
-    if(recentFrameType_ == FrameType::BULK || recentFrameType_ == FrameType::LAST)
+    bool isResolved = false;
+
+    if((thisFrameType_ == FrameType::BULK || thisFrameType_ == FrameType::LAST) && isValidFrame_)
     {
         promise_->resolve(std::move(message_));
         promise_.reset();
+        isResolved = true;
     }
     else
+    {
+        messageBuffer_[message_->getChannelId()] = std::move(message_);
+    }
+
+    if(!isResolved)
     {
         auto transportPromise = transport::ITransport::ReceivePromise::defer(strand_);
         transportPromise->then(

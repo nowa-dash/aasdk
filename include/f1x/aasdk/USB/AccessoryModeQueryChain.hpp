@@ -18,6 +18,8 @@
 
 #pragma once
 
+#include <boost/noncopyable.hpp>
+
 #include <f1x/aasdk/USB/IUSBWrapper.hpp>
 #include <f1x/aasdk/USB/IAccessoryModeQueryFactory.hpp>
 #include <f1x/aasdk/USB/IAccessoryModeQueryChain.hpp>
@@ -35,7 +37,7 @@ class AccessoryModeQueryChain: public IAccessoryModeQueryChain, public std::enab
 {
 public:
     AccessoryModeQueryChain(IUSBWrapper& usbWrapper,
-                            boost::asio::io_service& ioService,
+                            boost::asio::io_context& ioService,
                             IAccessoryModeQueryFactory& queryFactory);
 
     void start(DeviceHandle handle, Promise::Pointer promise) override;
@@ -56,7 +58,7 @@ private:
     void startQueryHandler(IUSBEndpoint::Pointer usbEndpoint);
     
     IUSBWrapper& usbWrapper_;
-    boost::asio::io_service::strand strand_;
+    boost::asio::strand<boost::asio::io_context::executor_type> strand_;
     IAccessoryModeQueryFactory& queryFactory_;
     DeviceHandle handle_;    
     Promise::Pointer promise_;

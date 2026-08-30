@@ -32,7 +32,7 @@ namespace channel
 namespace av
 {
 
-VideoServiceChannel::VideoServiceChannel(boost::asio::io_service::strand& strand, messenger::IMessenger::Pointer messenger)
+VideoServiceChannel::VideoServiceChannel(boost::asio::strand<boost::asio::io_context::executor_type>& strand, messenger::IMessenger::Pointer messenger)
     : ServiceChannel(strand, std::move(messenger), messenger::ChannelId::VIDEO)
 {
 

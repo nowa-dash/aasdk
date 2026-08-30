@@ -18,6 +18,8 @@
 
 #pragma once
 
+#include <boost/noncopyable.hpp>
+
 #include <f1x/aasdk/Common/Data.hpp>
 #include <f1x/aasdk/Transport/ITransport.hpp>
 #include <f1x/aasdk/Messenger/ICryptor.hpp>
@@ -35,7 +37,7 @@ namespace messenger
 class MessageOutStream: public IMessageOutStream, public std::enable_shared_from_this<MessageOutStream>, boost::noncopyable
 {
 public:
-    MessageOutStream(boost::asio::io_service& ioService, transport::ITransport::Pointer transport, ICryptor::Pointer cryptor);
+    MessageOutStream(boost::asio::io_context& ioService, transport::ITransport::Pointer transport, ICryptor::Pointer cryptor);
 
     void stream(Message::Pointer message, SendPromise::Pointer promise) override;
 
@@ -49,7 +51,7 @@ private:
     void setFrameSize(common::Data& data, FrameType frameType, size_t payloadSize, size_t totalSize);
     void reset();
 
-    boost::asio::io_service::strand strand_;
+    boost::asio::strand<boost::asio::io_context::executor_type> strand_;
     transport::ITransport::Pointer transport_;
     ICryptor::Pointer cryptor_;
     Message::Pointer message_;
