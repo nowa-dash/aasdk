@@ -29,11 +29,7 @@
 #include <f1x/aasdk/Messenger/MessageType.hpp>
 #include <f1x/aasdk/Messenger/MessageId.hpp>
 
-namespace f1x
-{
-namespace aasdk
-{
-namespace messenger
+namespace f1x::aasdk::messenger
 {
 
 class Message: boost::noncopyable
@@ -63,6 +59,4 @@ private:
     common::Data payload_;
 };
 
-}
-}
 }

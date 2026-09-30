@@ -24,11 +24,7 @@
 #include <f1x/aasdk/Messenger/Message.hpp>
 #include <f1x/aasdk/Messenger/Promise.hpp>
 
-namespace f1x
-{
-namespace aasdk
-{
-namespace messenger
+namespace f1x::aasdk::messenger
 {
 
 class IMessenger
@@ -44,6 +40,4 @@ public:
     virtual void stop() = 0;
 };
 
-}
-}
 }

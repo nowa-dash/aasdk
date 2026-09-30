@@ -18,11 +18,7 @@
 
 #pragma once
 
-namespace f1x
-{
-namespace aasdk
-{
-namespace messenger
+namespace f1x::aasdk::messenger
 {
 
 enum class EncryptionType
@@ -31,6 +27,4 @@ enum class EncryptionType
     ENCRYPTED = 1 << 3
 };
 
-}
-}
 }

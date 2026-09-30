@@ -24,13 +24,7 @@
 #include <aasdk_proto/ChannelOpenRequestMessage.pb.h>
 #include <f1x/aasdk/Error/Error.hpp>
 
-namespace f1x
-{
-namespace aasdk
-{
-namespace channel
-{
-namespace av
+namespace f1x::aasdk::channel::av
 {
 
 class IAVInputServiceChannelEventHandler
@@ -48,7 +42,4 @@ public:
     virtual void onChannelError(const error::Error& e) = 0;
 };
 
-}
-}
-}
 }

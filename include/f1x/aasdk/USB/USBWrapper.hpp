@@ -20,11 +20,7 @@
 
 #include <f1x/aasdk/USB/IUSBWrapper.hpp>
 
-namespace f1x
-{
-namespace aasdk
-{
-namespace usb
+namespace f1x::aasdk::usb
 {
 
 class USBWrapper: public IUSBWrapper
@@ -72,6 +68,4 @@ private:
     libusb_context* usbContext_;
 };
 
-}
-}
 }

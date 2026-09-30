@@ -20,11 +20,7 @@
 #include <f1x/aasdk/Error/Error.hpp>
 #include <f1x/aasdk/USB/USBEndpoint.hpp>
 
-namespace f1x
-{
-namespace aasdk
-{
-namespace usb
+namespace f1x::aasdk::usb
 {
 
 AccessoryModeQueryChain::AccessoryModeQueryChain(IUSBWrapper& usbWrapper,
@@ -200,6 +196,4 @@ void AccessoryModeQueryChain::startQueryHandler(IUSBEndpoint::Pointer usbEndpoin
     promise_.reset();
 }
 
-}
-}
 }

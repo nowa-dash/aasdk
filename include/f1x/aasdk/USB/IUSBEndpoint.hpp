@@ -23,11 +23,7 @@
 #include <f1x/aasdk/Common/Data.hpp>
 #include <f1x/aasdk/IO/Promise.hpp>
 
-namespace f1x
-{
-namespace aasdk
-{
-namespace usb
+namespace f1x::aasdk::usb
 {
 
 class IUSBEndpoint
@@ -47,6 +43,4 @@ public:
     virtual DeviceHandle getDeviceHandle() const = 0;
 };
 
-}
-}
 }

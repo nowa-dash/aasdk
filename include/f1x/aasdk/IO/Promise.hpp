@@ -24,11 +24,7 @@
 #include <f1x/aasdk/Error/Error.hpp>
 #include <f1x/aasdk/IO/IOContextWrapper.hpp>
 
-namespace f1x
-{
-namespace aasdk
-{
-namespace io
+namespace f1x::aasdk::io
 {
 
 template<typename ResolveArgumentType, typename ErrorArgumentType = error::Error>
@@ -355,7 +351,4 @@ private:
     std::mutex mutex_;
 };
 
-
-}
-}
 }

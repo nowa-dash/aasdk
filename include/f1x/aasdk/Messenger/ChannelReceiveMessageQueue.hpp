@@ -22,12 +22,7 @@
 #include <queue>
 #include <f1x/aasdk/Messenger/Message.hpp>
 
-
-namespace f1x
-{
-namespace aasdk
-{
-namespace messenger
+namespace f1x::aasdk::messenger
 {
 
 class ChannelReceiveMessageQueue
@@ -43,6 +38,4 @@ private:
     std::unordered_map<ChannelId, MessageQueue> queue_;
 };
 
-}
-}
 }

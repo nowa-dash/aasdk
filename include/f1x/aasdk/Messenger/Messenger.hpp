@@ -27,11 +27,7 @@
 #include <f1x/aasdk/Messenger/ChannelReceiveMessageQueue.hpp>
 #include <f1x/aasdk/Messenger/ChannelReceivePromiseQueue.hpp>
 
-namespace f1x
-{
-namespace aasdk
-{
-namespace messenger
+namespace f1x::aasdk::messenger
 {
 
 class Messenger: public IMessenger, public std::enable_shared_from_this<Messenger>, boost::noncopyable
@@ -61,6 +57,4 @@ private:
     ChannelSendQueue channelSendPromiseQueue_;
 };
 
-}
-}
 }

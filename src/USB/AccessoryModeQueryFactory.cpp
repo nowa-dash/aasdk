@@ -22,12 +22,7 @@
 #include <f1x/aasdk/USB/AccessoryModeProtocolVersionQuery.hpp>
 #include <f1x/aasdk/USB/AccessoryModeSendStringType.hpp>
 
-
-namespace f1x
-{
-namespace aasdk
-{
-namespace usb
+namespace f1x::aasdk::usb
 {
 
 AccessoryModeQueryFactory::AccessoryModeQueryFactory(usb::IUSBWrapper& usbWrapper, boost::asio::io_context& ioService)
@@ -76,6 +71,4 @@ IAccessoryModeQuery::Pointer AccessoryModeQueryFactory::createQuery(AccessoryMod
     }
 }
 
-}
-}
 }

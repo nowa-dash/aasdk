@@ -21,16 +21,10 @@
 #include <f1x/aasdk/Messenger/Message.hpp>
 #include <f1x/aasdk/IO/Promise.hpp>
 
-namespace f1x
-{
-namespace aasdk
-{
-namespace messenger
+namespace f1x::aasdk::messenger
 {
 
 typedef io::Promise<Message::Pointer> ReceivePromise;
 typedef io::Promise<void> SendPromise;
 
-}
-}
 }

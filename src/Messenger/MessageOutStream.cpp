@@ -20,11 +20,7 @@
 #include <f1x/aasdk/IO/PromiseLink.hpp>
 #include <f1x/aasdk/Messenger/MessageOutStream.hpp>
 
-namespace f1x
-{
-namespace aasdk
-{
-namespace messenger
+namespace f1x::aasdk::messenger
 {
 
 MessageOutStream::MessageOutStream(boost::asio::io_context& ioService, transport::ITransport::Pointer transport, ICryptor::Pointer cryptor)
@@ -153,6 +149,4 @@ void MessageOutStream::reset()
     message_.reset();
 }
 
-}
-}
 }

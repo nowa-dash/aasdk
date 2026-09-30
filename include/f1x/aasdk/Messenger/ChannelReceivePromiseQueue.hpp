@@ -22,11 +22,7 @@
 #include <unordered_map>
 #include <f1x/aasdk/Messenger/IMessenger.hpp>
 
-namespace f1x
-{
-namespace aasdk
-{
-namespace messenger
+namespace f1x::aasdk::messenger
 {
 
 class ChannelReceivePromiseQueue
@@ -44,6 +40,4 @@ private:
     std::unordered_map<ChannelId, std::queue<ReceivePromise::Pointer>> queue_;
 };
 
-}
-}
 }

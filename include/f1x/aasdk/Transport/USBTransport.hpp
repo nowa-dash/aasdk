@@ -22,11 +22,7 @@
 #include <f1x/aasdk/Transport/Transport.hpp>
 #include <f1x/aasdk/USB/IAOAPDevice.hpp>
 
-namespace f1x
-{
-namespace aasdk
-{
-namespace transport
+namespace f1x::aasdk::transport
 {
 
 class USBTransport: public Transport
@@ -48,6 +44,4 @@ private:
     static constexpr uint32_t cReceiveTimeoutMs = 0;
 };
 
-}
-}
 }

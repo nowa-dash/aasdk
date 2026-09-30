@@ -18,11 +18,7 @@
 
 #include <f1x/aasdk/Messenger/ChannelReceiveMessageQueue.hpp>
 
-namespace f1x
-{
-namespace aasdk
-{
-namespace messenger
+namespace f1x::aasdk::messenger
 {
 
 void ChannelReceiveMessageQueue::push(Message::Pointer message)
@@ -62,6 +58,4 @@ void ChannelReceiveMessageQueue::clear()
     queue_.clear();
 }
 
-}
-}
 }

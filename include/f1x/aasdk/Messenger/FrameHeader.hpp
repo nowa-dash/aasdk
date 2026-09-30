@@ -24,11 +24,7 @@
 #include <f1x/aasdk/Messenger/EncryptionType.hpp>
 #include <f1x/aasdk/Messenger/MessageType.hpp>
 
-namespace f1x
-{
-namespace aasdk
-{
-namespace messenger
+namespace f1x::aasdk::messenger
 {
 
 class FrameHeader
@@ -52,6 +48,4 @@ private:
     MessageType messageType_;
 };
 
-}
-}
 }

@@ -23,11 +23,7 @@
 #include <openssl/conf.h>
 #include <f1x/aasdk/Transport/SSLWrapper.hpp>
 
-namespace f1x
-{
-namespace aasdk
-{
-namespace transport
+namespace f1x::aasdk::transport
 {
 
 SSLWrapper::SSLWrapper()
@@ -191,6 +187,4 @@ int SSLWrapper::getError(SSL* ssl, int returnCode)
     return SSL_get_error(ssl, returnCode);
 }
 
-}
-}
 }

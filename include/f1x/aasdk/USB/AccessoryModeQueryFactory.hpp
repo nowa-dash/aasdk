@@ -20,13 +20,8 @@
 
 #include <f1x/aasdk/USB/IAccessoryModeQueryFactory.hpp>
 
-namespace f1x
+namespace f1x::aasdk::usb
 {
-namespace aasdk
-{
-namespace usb
-{
-
 
 class AccessoryModeQueryFactory: public IAccessoryModeQueryFactory
 {
@@ -39,6 +34,4 @@ private:
     boost::asio::io_context& ioService_;
 };
 
-}
-}
 }

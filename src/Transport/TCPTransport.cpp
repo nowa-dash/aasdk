@@ -18,11 +18,7 @@
 
 #include <f1x/aasdk/Transport/TCPTransport.hpp>
 
-namespace f1x
-{
-namespace aasdk
-{
-namespace transport
+namespace f1x::aasdk::transport
 {
 
 TCPTransport::TCPTransport(boost::asio::io_context& ioService, tcp::ITCPEndpoint::Pointer tcpEndpoint)
@@ -83,6 +79,4 @@ void TCPTransport::sendHandler(SendQueue::iterator queueElement, const error::Er
     }
 }
 
-}
-}
 }

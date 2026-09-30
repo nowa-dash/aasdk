@@ -21,11 +21,7 @@
 #include <boost/asio.hpp>
 #include <mutex>
 
-namespace f1x
-{
-namespace aasdk
-{
-namespace io
+namespace f1x::aasdk::io
 {
 
 class IOContextWrapper
@@ -69,6 +65,4 @@ private:
     boost::asio::strand<boost::asio::io_context::executor_type>* strand_;
 };
 
-}
-}
 }

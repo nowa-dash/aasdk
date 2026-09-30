@@ -20,11 +20,7 @@
 #include <f1x/aasdk/Transport/DataSink.hpp>
 #include <f1x/aasdk/Error/Error.hpp>
 
-namespace f1x
-{
-namespace aasdk
-{
-namespace transport
+namespace f1x::aasdk::transport
 {
 
 DataSink::DataSink()
@@ -70,6 +66,4 @@ common::Data DataSink::consume(common::Data::size_type size)
     return data;
 }
 
-}
-}
 }

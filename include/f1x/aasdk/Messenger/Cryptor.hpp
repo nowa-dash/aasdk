@@ -22,11 +22,7 @@
 #include <f1x/aasdk/Transport/ISSLWrapper.hpp>
 #include <f1x/aasdk/Messenger/ICryptor.hpp>
 
-namespace f1x
-{
-namespace aasdk
-{
-namespace messenger
+namespace f1x::aasdk::messenger
 {
 
 class Cryptor: public ICryptor
@@ -62,6 +58,4 @@ private:
     mutable std::mutex mutex_;
 };
 
-}
-}
 }

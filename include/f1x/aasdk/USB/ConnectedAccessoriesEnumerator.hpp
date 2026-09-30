@@ -23,11 +23,7 @@
 #include <f1x/aasdk/USB/IAccessoryModeQueryChainFactory.hpp>
 #include <f1x/aasdk/USB/IConnectedAccessoriesEnumerator.hpp>
 
-namespace f1x
-{
-namespace aasdk
-{
-namespace usb
+namespace f1x::aasdk::usb
 {
 
 class ConnectedAccessoriesEnumerator: public IConnectedAccessoriesEnumerator, public std::enable_shared_from_this<ConnectedAccessoriesEnumerator>
@@ -53,6 +49,4 @@ private:
     DeviceList::iterator actualDeviceIter_;
 };
 
-}
-}
 }

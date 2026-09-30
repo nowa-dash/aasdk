@@ -25,11 +25,7 @@
 #include <f1x/aasdk/USB/IUSBWrapper.hpp>
 #include <f1x/aasdk/USB/IAOAPDevice.hpp>
 
-namespace f1x
-{
-namespace aasdk
-{
-namespace usb
+namespace f1x::aasdk::usb
 {
 
 class AOAPDevice: public IAOAPDevice, boost::noncopyable
@@ -59,6 +55,4 @@ private:
     static constexpr uint16_t cAOAPWithAdbId = 0x2D01;
 };
 
-}
-}
 }

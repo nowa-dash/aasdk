@@ -27,11 +27,7 @@
 #include <f1x/aasdk/Messenger/FrameHeader.hpp>
 #include <f1x/aasdk/Messenger/FrameSize.hpp>
 
-namespace f1x
-{
-namespace aasdk
-{
-namespace messenger
+namespace f1x::aasdk::messenger
 {
 
 class MessageOutStream: public IMessageOutStream, public std::enable_shared_from_this<MessageOutStream>, boost::noncopyable
@@ -62,6 +58,4 @@ private:
         static constexpr size_t cMaxFramePayloadSize = 0x4000;
 };
 
-}
-}
 }

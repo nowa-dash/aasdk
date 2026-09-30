@@ -21,11 +21,7 @@
 #include <f1x/aasdk/USB/IAccessoryModeQueryChainFactory.hpp>
 #include <f1x/aasdk/USB/IAccessoryModeQueryFactory.hpp>
 
-namespace f1x
-{
-namespace aasdk
-{
-namespace usb
+namespace f1x::aasdk::usb
 {
 
 class AccessoryModeQueryChainFactory: public IAccessoryModeQueryChainFactory
@@ -42,6 +38,4 @@ private:
     IAccessoryModeQueryFactory& queryFactory_;
 };
 
-}
-}
 }

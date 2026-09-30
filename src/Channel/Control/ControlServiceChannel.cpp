@@ -24,13 +24,7 @@
 #include <f1x/aasdk/Channel/Control/IControlServiceChannelEventHandler.hpp>
 #include <f1x/aasdk/Common/Log.hpp>
 
-namespace f1x
-{
-namespace aasdk
-{
-namespace channel
-{
-namespace control
+namespace f1x::aasdk::channel::control
 {
 
 ControlServiceChannel::ControlServiceChannel(boost::asio::strand<boost::asio::io_context::executor_type>& strand, messenger::IMessenger::Pointer messenger)
@@ -261,7 +255,4 @@ void ControlServiceChannel::handlePingResponse(const common::DataConstBuffer& pa
     }
 }
 
-}
-}
-}
 }

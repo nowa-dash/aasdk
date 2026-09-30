@@ -22,11 +22,7 @@
 #include <f1x/aasdk/Common/Data.hpp>
 #include <f1x/aasdk/IO/Promise.hpp>
 
-namespace f1x
-{
-namespace aasdk
-{
-namespace transport
+namespace f1x::aasdk::transport
 {
 
 class ITransport
@@ -44,6 +40,4 @@ public:
     virtual void stop() = 0;
 };
 
-}
-}
 }

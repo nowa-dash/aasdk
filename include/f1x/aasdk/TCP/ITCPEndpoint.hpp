@@ -22,11 +22,7 @@
 #include <f1x/aasdk/Common/Data.hpp>
 #include <f1x/aasdk/IO/Promise.hpp>
 
-namespace f1x
-{
-namespace aasdk
-{
-namespace tcp
+namespace f1x::aasdk::tcp
 {
 
 class ITCPEndpoint
@@ -43,6 +39,4 @@ public:
     virtual void stop() = 0;
 };
 
-}
-}
 }

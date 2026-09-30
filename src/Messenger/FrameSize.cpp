@@ -19,11 +19,7 @@
 #include <boost/endian/conversion.hpp>
 #include <f1x/aasdk/Messenger/FrameSize.hpp>
 
-namespace f1x
-{
-namespace aasdk
-{
-namespace messenger
+namespace f1x::aasdk::messenger
 {
 
 FrameSize::FrameSize(size_t frameSize, size_t totalSize)
@@ -85,6 +81,4 @@ size_t FrameSize::getSizeOf(FrameSizeType type)
     return type == FrameSizeType::EXTENDED ? 6 : 2;
 }
 
-}
-}
 }

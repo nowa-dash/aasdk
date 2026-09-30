@@ -21,13 +21,7 @@
 #include <f1x/aasdk/Channel/ServiceChannel.hpp>
 #include <f1x/aasdk/Channel/AV/IVideoServiceChannel.hpp>
 
-namespace f1x
-{
-namespace aasdk
-{
-namespace channel
-{
-namespace av
+namespace f1x::aasdk::channel::av
 {
 
 class VideoServiceChannel: public IVideoServiceChannel, public ServiceChannel, public std::enable_shared_from_this<VideoServiceChannel>
@@ -53,7 +47,4 @@ private:
     void handleAVMediaWithTimestampIndication(const common::DataConstBuffer& payload, IVideoServiceChannelEventHandler::Pointer eventHandler);
 };
 
-}
-}
-}
 }

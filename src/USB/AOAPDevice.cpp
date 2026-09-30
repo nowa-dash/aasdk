@@ -21,11 +21,7 @@
 #include <f1x/aasdk/USB/AOAPDevice.hpp>
 #include <f1x/aasdk/Error/Error.hpp>
 
-namespace f1x
-{
-namespace aasdk
-{
-namespace usb
+namespace f1x::aasdk::usb
 {
 
 AOAPDevice::AOAPDevice(IUSBWrapper& usbWrapper, boost::asio::io_context& ioService, DeviceHandle handle, const libusb_interface_descriptor* interfaceDescriptor)
@@ -122,6 +118,4 @@ const libusb_interface_descriptor* AOAPDevice::getInterfaceDescriptor(const libu
     return &interface->altsetting[0];
 }
 
-}
-}
 }

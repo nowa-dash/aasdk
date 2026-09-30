@@ -18,11 +18,7 @@
 
 #include <f1x/aasdk/Messenger/Message.hpp>
 
-namespace f1x
-{
-namespace aasdk
-{
-namespace messenger
+namespace f1x::aasdk::messenger
 {
 
 Message::Message(ChannelId channelId, EncryptionType encryptionType, MessageType type)
@@ -100,6 +96,4 @@ void Message::insertPayload(common::DataBuffer& buffer)
     common::copy(payload_, buffer);
 }
 
-}
-}
 }

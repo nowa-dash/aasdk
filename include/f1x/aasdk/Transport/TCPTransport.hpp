@@ -21,11 +21,7 @@
 #include <f1x/aasdk/TCP/ITCPEndpoint.hpp>
 #include <f1x/aasdk/Transport/Transport.hpp>
 
-namespace f1x
-{
-namespace aasdk
-{
-namespace transport
+namespace f1x::aasdk::transport
 {
 
 class TCPTransport: public Transport
@@ -43,6 +39,4 @@ private:
     tcp::ITCPEndpoint::Pointer tcpEndpoint_;
 };
 
-}
-}
 }

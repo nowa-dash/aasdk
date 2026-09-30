@@ -22,12 +22,7 @@
 #include <boost/circular_buffer.hpp>
 #include <f1x/aasdk/Common/Data.hpp>
 
-
-namespace f1x
-{
-namespace aasdk
-{
-namespace transport
+namespace f1x::aasdk::transport
 {
 
 class DataSink
@@ -46,6 +41,4 @@ private:
     static constexpr common::Data::size_type cChunkSize = 16384;
 };
 
-}
-}
 }

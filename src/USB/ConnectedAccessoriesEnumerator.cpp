@@ -18,11 +18,7 @@
 
 #include <f1x/aasdk/USB/ConnectedAccessoriesEnumerator.hpp>
 
-namespace f1x
-{
-namespace aasdk
-{
-namespace usb
+namespace f1x::aasdk::usb
 {
 
 ConnectedAccessoriesEnumerator::ConnectedAccessoriesEnumerator(IUSBWrapper& usbWrapper, boost::asio::io_context& ioService, IAccessoryModeQueryChainFactory& queryChainFactory)
@@ -133,6 +129,4 @@ void ConnectedAccessoriesEnumerator::reset()
     promise_.reset();
 }
 
-}
-}
 }

@@ -23,13 +23,7 @@
 #include <f1x/aasdk/Channel/ServiceChannel.hpp>
 #include <f1x/aasdk/Channel/AV/IAVInputServiceChannel.hpp>
 
-namespace f1x
-{
-namespace aasdk
-{
-namespace channel
-{
-namespace av
+namespace f1x::aasdk::channel::av
 {
 
 class AVInputServiceChannel: public IAVInputServiceChannel, public ServiceChannel, public std::enable_shared_from_this<AVInputServiceChannel>
@@ -53,7 +47,4 @@ private:
     void handleChannelOpenRequest(const common::DataConstBuffer& payload, IAVInputServiceChannelEventHandler::Pointer eventHandler);
 };
 
-}
-}
-}
 }

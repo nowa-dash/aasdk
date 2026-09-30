@@ -25,11 +25,7 @@
 #include <f1x/aasdk/USB/IUSBWrapper.hpp>
 #include <f1x/aasdk/USB/IUSBEndpoint.hpp>
 
-namespace f1x
-{
-namespace aasdk
-{
-namespace usb
+namespace f1x::aasdk::usb
 {
 
 class USBEndpoint: public IUSBEndpoint,
@@ -61,6 +57,4 @@ private:
     std::shared_ptr<USBEndpoint> self_;
 };
 
-}
-}
 }

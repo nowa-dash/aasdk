@@ -20,11 +20,7 @@
 #include <f1x/aasdk/Common/Data.hpp>
 #include <f1x/aasdk/Common/Log.hpp>
 
-namespace f1x
-{
-namespace aasdk
-{
-namespace common
+namespace f1x::aasdk::common
 {
 
 DataBuffer::DataBuffer()
@@ -145,6 +141,4 @@ std::string dump(const DataConstBuffer& buffer)
     }
 }
 
-}
-}
 }

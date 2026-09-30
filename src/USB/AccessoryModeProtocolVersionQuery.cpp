@@ -21,11 +21,7 @@
 #include <f1x/aasdk/USB/AccessoryModeProtocolVersionQuery.hpp>
 #include <f1x/aasdk/USB/USBEndpoint.hpp>
 
-namespace f1x
-{
-namespace aasdk
-{
-namespace usb
+namespace f1x::aasdk::usb
 {
 
 AccessoryModeProtocolVersionQuery::AccessoryModeProtocolVersionQuery(boost::asio::io_context& ioService, IUSBWrapper& usbWrapper, IUSBEndpoint::Pointer usbEndpoint)
@@ -75,6 +71,4 @@ void AccessoryModeProtocolVersionQuery::protocolVersionHandler(size_t bytesTrans
     }
 }
 
-}
-}
 }

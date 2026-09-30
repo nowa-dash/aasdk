@@ -20,11 +20,7 @@
 
 #include <f1x/aasdk/TCP/ITCPWrapper.hpp>
 
-namespace f1x
-{
-namespace aasdk
-{
-namespace tcp
+namespace f1x::aasdk::tcp
 {
 
 class TCPWrapper: public ITCPWrapper
@@ -37,6 +33,4 @@ public:
     boost::system::error_code connect(boost::asio::ip::tcp::socket& socket, const std::string& hostname, uint16_t port) override;
 };
 
-}
-}
 }

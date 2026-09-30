@@ -19,11 +19,7 @@
 #include <f1x/aasdk/USB/AccessoryModeQueryChainFactory.hpp>
 #include <f1x/aasdk/USB/AccessoryModeQueryChain.hpp>
 
-namespace f1x
-{
-namespace aasdk
-{
-namespace usb
+namespace f1x::aasdk::usb
 {
 
 AccessoryModeQueryChainFactory::AccessoryModeQueryChainFactory(IUSBWrapper& usbWrapper,
@@ -41,6 +37,4 @@ IAccessoryModeQueryChain::Pointer AccessoryModeQueryChainFactory::create()
     return std::make_shared<AccessoryModeQueryChain>(usbWrapper_, ioService_, queryFactory_);
 }
 
-}
-}
 }

@@ -28,11 +28,7 @@
 #include <f1x/aasdk/Messenger/FrameHeader.hpp>
 #include <f1x/aasdk/Messenger/FrameSize.hpp>
 
-namespace f1x
-{
-namespace aasdk
-{
-namespace messenger
+namespace f1x::aasdk::messenger
 {
 
 class MessageInStream: public IMessageInStream, public std::enable_shared_from_this<MessageInStream>, boost::noncopyable
@@ -59,6 +55,4 @@ private:
     Message::Pointer message_;
 };
 
-}
-}
 }

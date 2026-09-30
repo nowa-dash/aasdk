@@ -21,11 +21,7 @@
 #include <memory>
 #include <f1x/aasdk/Common/Data.hpp>
 
-namespace f1x
-{
-namespace aasdk
-{
-namespace messenger
+namespace f1x::aasdk::messenger
 {
 
 class ICryptor
@@ -46,6 +42,4 @@ public:
     virtual bool isActive() const = 0;
 };
 
-}
-}
 }

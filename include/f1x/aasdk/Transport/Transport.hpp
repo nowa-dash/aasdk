@@ -25,11 +25,7 @@
 #include <f1x/aasdk/Transport/ITransport.hpp>
 #include <f1x/aasdk/Transport/DataSink.hpp>
 
-namespace f1x
-{
-namespace aasdk
-{
-namespace transport
+namespace f1x::aasdk::transport
 {
 
 class Transport: public ITransport, public std::enable_shared_from_this<Transport>, boost::noncopyable
@@ -61,6 +57,4 @@ protected:
     SendQueue sendQueue_;
 };
 
-}
-}
 }

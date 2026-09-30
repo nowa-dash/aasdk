@@ -20,11 +20,7 @@
 #include <f1x/aasdk/Error/Error.hpp>
 #include <f1x/aasdk/Messenger/Messenger.hpp>
 
-namespace f1x
-{
-namespace aasdk
-{
-namespace messenger
+namespace f1x::aasdk::messenger
 {
 
 Messenger::Messenger(boost::asio::io_context& ioService, IMessageInStream::Pointer messageInStream, IMessageOutStream::Pointer messageOutStream)
@@ -138,6 +134,4 @@ void Messenger::stop()
     });
 }
 
-}
-}
 }

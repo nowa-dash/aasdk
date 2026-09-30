@@ -18,11 +18,7 @@
 
 #include <f1x/aasdk/Messenger/ChannelReceivePromiseQueue.hpp>
 
-namespace f1x
-{
-namespace aasdk
-{
-namespace messenger
+namespace f1x::aasdk::messenger
 {
 
 void ChannelReceivePromiseQueue::push(ChannelId channelId, ReceivePromise::Pointer promise)
@@ -69,6 +65,4 @@ ReceivePromise::Pointer ChannelReceivePromiseQueue::pop()
     return this->pop(queue_.begin()->first);
 }
 
-}
-}
 }

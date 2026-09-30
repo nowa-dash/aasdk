@@ -22,11 +22,7 @@
 #include <f1x/aasdk/Messenger/MessageId.hpp>
 #include <f1x/aasdk/Messenger/Promise.hpp>
 
-namespace f1x
-{
-namespace aasdk
-{
-namespace messenger
+namespace f1x::aasdk::messenger
 {
 
 class IMessageOutStream
@@ -40,6 +36,4 @@ public:
     virtual void stream(Message::Pointer message, SendPromise::Pointer promise) = 0;
 };
 
-}
-}
 }

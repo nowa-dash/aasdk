@@ -20,11 +20,7 @@
 
 #include <f1x/aasdk/Transport/ISSLWrapper.hpp>
 
-namespace f1x
-{
-namespace aasdk
-{
-namespace transport
+namespace f1x::aasdk::transport
 {
 
 class SSLWrapper: public ISSLWrapper
@@ -61,6 +57,4 @@ public:
     int sslWrite(SSL *ssl, const void *buf, int num) override;
 };
 
-}
-}
 }

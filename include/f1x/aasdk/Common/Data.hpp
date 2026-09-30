@@ -23,11 +23,7 @@
 #include <cstddef>
 #include <stdint.h>
 
-namespace f1x
-{
-namespace aasdk
-{
-namespace common
+namespace f1x::aasdk::common
 {
 
 typedef std::vector<uint8_t> Data;
@@ -82,6 +78,4 @@ common::Data createData(const DataConstBuffer& buffer);
 std::string dump(const Data& data);
 std::string dump(const DataConstBuffer& buffer);
 
-}
-}
 }

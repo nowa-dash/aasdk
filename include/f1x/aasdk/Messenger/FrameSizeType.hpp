@@ -18,11 +18,7 @@
 
 #pragma once
 
-namespace f1x
-{
-namespace aasdk
-{
-namespace messenger
+namespace f1x::aasdk::messenger
 {
 
 enum class FrameSizeType
@@ -31,6 +27,4 @@ enum class FrameSizeType
     EXTENDED
 };
 
-}
-}
 }

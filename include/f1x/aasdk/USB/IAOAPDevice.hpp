@@ -20,11 +20,7 @@
 
 #include <f1x/aasdk/USB/IUSBEndpoint.hpp>
 
-namespace f1x
-{
-namespace aasdk
-{
-namespace usb
+namespace f1x::aasdk::usb
 {
 
 class IAOAPDevice
@@ -39,6 +35,4 @@ public:
     virtual IUSBEndpoint& getOutEndpoint() = 0;
 };
 
-}
-}
 }

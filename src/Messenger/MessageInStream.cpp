@@ -19,11 +19,7 @@
 #include <f1x/aasdk/Messenger/MessageInStream.hpp>
 #include <f1x/aasdk/Error/Error.hpp>
 
-namespace f1x
-{
-namespace aasdk
-{
-namespace messenger
+namespace f1x::aasdk::messenger
 {
 
 MessageInStream::MessageInStream(boost::asio::io_context& ioService, transport::ITransport::Pointer transport, ICryptor::Pointer cryptor)
@@ -175,6 +171,4 @@ void MessageInStream::receiveFramePayloadHandler(const common::DataConstBuffer& 
     }
 }
 
-}
-}
 }

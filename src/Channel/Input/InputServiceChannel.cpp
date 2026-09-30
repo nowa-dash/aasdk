@@ -23,13 +23,7 @@
 #include <f1x/aasdk/Channel/Input/IInputServiceChannelEventHandler.hpp>
 #include <f1x/aasdk/Common/Log.hpp>
 
-namespace f1x
-{
-namespace aasdk
-{
-namespace channel
-{
-namespace input
+namespace f1x::aasdk::channel::input
 {
 
 InputServiceChannel::InputServiceChannel(boost::asio::strand<boost::asio::io_context::executor_type>& strand, messenger::IMessenger::Pointer messenger)
@@ -125,7 +119,4 @@ void InputServiceChannel::handleChannelOpenRequest(const common::DataConstBuffer
     }
 }
 
-}
-}
-}
 }

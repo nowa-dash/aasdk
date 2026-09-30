@@ -18,11 +18,7 @@
 
 #include <f1x/aasdk/Error/Error.hpp>
 
-namespace f1x
-{
-namespace aasdk
-{
-namespace error
+namespace f1x::aasdk::error
 {
 
 Error::Error()
@@ -75,6 +71,4 @@ bool Error::operator!=(const ErrorCode& code) const
     return !operator==(code);
 }
 
-}
-}
 }

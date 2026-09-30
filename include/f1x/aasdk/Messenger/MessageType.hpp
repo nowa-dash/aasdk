@@ -22,11 +22,7 @@
 
 #include <stdint.h>
 
-namespace f1x
-{
-namespace aasdk
-{
-namespace messenger
+namespace f1x::aasdk::messenger
 {
 
 enum class MessageType
@@ -35,6 +31,4 @@ enum class MessageType
     CONTROL = 1 << 2
 };
 
-}
-}
 }

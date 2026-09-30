@@ -22,11 +22,7 @@
 #include <string>
 #include <f1x/aasdk/Error/ErrorCode.hpp>
 
-namespace f1x
-{
-namespace aasdk
-{
-namespace error
+namespace f1x::aasdk::error
 {
 
 class Error: public std::exception
@@ -50,6 +46,4 @@ private:
     std::string message_;
 };
 
-}
-}
 }

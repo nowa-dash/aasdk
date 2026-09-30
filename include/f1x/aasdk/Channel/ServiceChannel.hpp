@@ -22,11 +22,7 @@
 #include <f1x/aasdk/Messenger/IMessenger.hpp>
 #include <f1x/aasdk/Channel/Promise.hpp>
 
-namespace f1x
-{
-namespace aasdk
-{
-namespace channel
+namespace f1x::aasdk::channel
 {
 
 class ServiceChannel
@@ -44,6 +40,4 @@ protected:
     messenger::ChannelId channelId_;
 };
 
-}
-}
 }

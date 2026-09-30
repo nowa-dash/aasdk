@@ -21,13 +21,7 @@
 #include <f1x/aasdk/Channel/ServiceChannel.hpp>
 #include <f1x/aasdk/Channel/Sensor/ISensorServiceChannel.hpp>
 
-namespace f1x
-{
-namespace aasdk
-{
-namespace channel
-{
-namespace sensor
+namespace f1x::aasdk::channel::sensor
 {
 
 class SensorServiceChannel: public ISensorServiceChannel, public ServiceChannel, public std::enable_shared_from_this<SensorServiceChannel>
@@ -48,7 +42,4 @@ private:
     void handleChannelOpenRequest(const common::DataConstBuffer& payload, ISensorServiceChannelEventHandler::Pointer eventHandler);
 };
 
-}
-}
-}
 }

@@ -21,11 +21,7 @@
 #include <f1x/aasdk/Common/Data.hpp>
 #include <f1x/aasdk/Messenger/FrameSizeType.hpp>
 
-namespace f1x
-{
-namespace aasdk
-{
-namespace messenger
+namespace f1x::aasdk::messenger
 {
 
 class FrameSize
@@ -46,6 +42,4 @@ private:
     size_t totalSize_;
 };
 
-}
-}
 }

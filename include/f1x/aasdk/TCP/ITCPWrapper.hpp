@@ -22,11 +22,7 @@
 #include <boost/asio/ip/tcp.hpp>
 #include <f1x/aasdk/Common/Data.hpp>
 
-namespace f1x
-{
-namespace aasdk
-{
-namespace tcp
+namespace f1x::aasdk::tcp
 {
 
 class ITCPWrapper
@@ -44,6 +40,4 @@ public:
     virtual boost::system::error_code connect(boost::asio::ip::tcp::socket& socket, const std::string& hostname, uint16_t port) = 0;
 };
 
-}
-}
 }

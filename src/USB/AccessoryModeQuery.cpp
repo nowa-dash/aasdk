@@ -19,11 +19,7 @@
 #include <f1x/aasdk/USB/AccessoryModeQuery.hpp>
 #include <f1x/aasdk/USB/USBEndpoint.hpp>
 
-namespace f1x
-{
-namespace aasdk
-{
-namespace usb
+namespace f1x::aasdk::usb
 {
 
 AccessoryModeQuery::AccessoryModeQuery(boost::asio::io_context& ioService, IUSBEndpoint::Pointer usbEndpoint)
@@ -38,6 +34,4 @@ void AccessoryModeQuery::cancel()
     usbEndpoint_->cancelTransfers();
 }
 
-}
-}
 }

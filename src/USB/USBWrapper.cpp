@@ -18,11 +18,7 @@
 
 #include <f1x/aasdk/USB/USBWrapper.hpp>
 
-namespace f1x
-{
-namespace aasdk
-{
-namespace usb
+namespace f1x::aasdk::usb
 {
 
 USBWrapper::USBWrapper(libusb_context* usbContext)
@@ -168,6 +164,4 @@ libusb_transfer* USBWrapper::allocTransfer(int iso_packets)
     return libusb_alloc_transfer(iso_packets);
 }
 
-}
-}
 }

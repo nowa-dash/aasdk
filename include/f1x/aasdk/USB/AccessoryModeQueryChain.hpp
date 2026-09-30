@@ -24,13 +24,9 @@
 #include <f1x/aasdk/USB/IAccessoryModeQueryFactory.hpp>
 #include <f1x/aasdk/USB/IAccessoryModeQueryChain.hpp>
 
-namespace f1x
+namespace f1x::aasdk::usb
 {
-namespace aasdk
-{
-namespace usb
-{
-    
+
 class IAccessoryModeQueryFactory;
 
 class AccessoryModeQueryChain: public IAccessoryModeQueryChain, public std::enable_shared_from_this<AccessoryModeQueryChain>, boost::noncopyable
@@ -65,6 +61,4 @@ private:
     IAccessoryModeQuery::Pointer activeQuery_;
 };
 
-}
-}
 }

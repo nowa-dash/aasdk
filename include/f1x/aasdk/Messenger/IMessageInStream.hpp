@@ -21,11 +21,7 @@
 #include <memory>
 #include <f1x/aasdk/Messenger/Promise.hpp>
 
-namespace f1x
-{
-namespace aasdk
-{
-namespace messenger
+namespace f1x::aasdk::messenger
 {
 
 class IMessageInStream
@@ -39,6 +35,4 @@ public:
     virtual void startReceive(ReceivePromise::Pointer promise) = 0;
 };
 
-}
-}
 }

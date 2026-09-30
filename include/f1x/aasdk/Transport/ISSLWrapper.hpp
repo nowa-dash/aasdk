@@ -21,11 +21,7 @@
 #include <memory>
 #include <openssl/ssl.h>
 
-namespace f1x
-{
-namespace aasdk
-{
-namespace transport
+namespace f1x::aasdk::transport
 {
 
 class ISSLWrapper
@@ -65,6 +61,4 @@ public:
     virtual int getError(SSL* ssl, int returnCode) = 0;
 };
 
-}
-}
 }

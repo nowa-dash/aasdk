@@ -18,11 +18,7 @@
 
 #include <f1x/aasdk/Transport/USBTransport.hpp>
 
-namespace f1x
-{
-namespace aasdk
-{
-namespace transport
+namespace f1x::aasdk::transport
 {
 
 USBTransport::USBTransport(boost::asio::io_context& ioService, usb::IAOAPDevice::Pointer aoapDevice)
@@ -91,6 +87,4 @@ void USBTransport::stop()
     aoapDevice_->getOutEndpoint().cancelTransfers();
 }
 
-}
-}
 }

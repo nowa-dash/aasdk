@@ -20,11 +20,7 @@
 #include <f1x/aasdk/USB/AccessoryModeSendStringQuery.hpp>
 #include <f1x/aasdk/USB/USBEndpoint.hpp>
 
-namespace f1x
-{
-namespace aasdk
-{
-namespace usb
+namespace f1x::aasdk::usb
 {
 
 AccessoryModeSendStringQuery::AccessoryModeSendStringQuery(boost::asio::io_context& ioService, IUSBWrapper& usbWrapper, IUSBEndpoint::Pointer usbEndpoint,
@@ -65,6 +61,4 @@ void AccessoryModeSendStringQuery::start(Promise::Pointer promise)
     });
 }
 
-}
-}
 }

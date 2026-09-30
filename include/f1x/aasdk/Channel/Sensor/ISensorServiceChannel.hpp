@@ -26,13 +26,7 @@
 #include <aasdk_proto/SensorStartResponseMessage.pb.h>
 #include <f1x/aasdk/Channel/Sensor/ISensorServiceChannelEventHandler.hpp>
 
-namespace f1x
-{
-namespace aasdk
-{
-namespace channel
-{
-namespace sensor
+namespace f1x::aasdk::channel::sensor
 {
 
 class ISensorServiceChannel
@@ -50,7 +44,4 @@ public:
     virtual void sendSensorStartResponse(const proto::messages::SensorStartResponseMessage& response, SendPromise::Pointer promise) = 0;
 };
 
-}
-}
-}
 }

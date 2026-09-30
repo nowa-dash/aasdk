@@ -18,11 +18,7 @@
 
 #include <f1x/aasdk/Messenger/ChannelId.hpp>
 
-namespace f1x
-{
-namespace aasdk
-{
-namespace messenger
+namespace f1x::aasdk::messenger
 {
 
 std::string channelIdToString(ChannelId channelId)
@@ -54,6 +50,4 @@ std::string channelIdToString(ChannelId channelId)
     }
 }
 
-}
-}
 }

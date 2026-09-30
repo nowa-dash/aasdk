@@ -27,13 +27,7 @@
 #include <f1x/aasdk/Channel/Promise.hpp>
 #include <f1x/aasdk/Channel/AV/IAVInputServiceChannelEventHandler.hpp>
 
-namespace f1x
-{
-namespace aasdk
-{
-namespace channel
-{
-namespace av
+namespace f1x::aasdk::channel::av
 {
 
 class IAVInputServiceChannel
@@ -52,7 +46,4 @@ public:
     virtual messenger::ChannelId getId() const = 0;
 };
 
-}
-}
-}
 }

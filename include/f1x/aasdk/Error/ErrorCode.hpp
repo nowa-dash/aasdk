@@ -20,11 +20,7 @@
 
 #include <stdint.h>
 
-namespace f1x
-{
-namespace aasdk
-{
-namespace error
+namespace f1x::aasdk::error
 {
 
 enum class ErrorCode
@@ -65,6 +61,4 @@ enum class ErrorCode
     TCP_TRANSFER = 33
 };
 
-}
-}
 }

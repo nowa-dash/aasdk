@@ -23,11 +23,7 @@
 #include <f1x/aasdk/USB/IUSBWrapper.hpp>
 #include <f1x/aasdk/IO/Promise.hpp>
 
-namespace f1x
-{
-namespace aasdk
-{
-namespace usb
+namespace f1x::aasdk::usb
 {
 
 class IAccessoryModeQueryChain
@@ -42,6 +38,4 @@ public:
     virtual void cancel() = 0;
 };
 
-}
-}
 }

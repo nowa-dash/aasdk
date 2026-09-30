@@ -21,11 +21,7 @@
 #include <memory>
 #include <functional>
 
-namespace f1x
-{
-namespace aasdk
-{
-namespace usb
+namespace f1x::aasdk::usb
 {
 
 enum class AccessoryModeQueryType
@@ -40,6 +36,4 @@ enum class AccessoryModeQueryType
     START
 };
 
-}
-}
 }

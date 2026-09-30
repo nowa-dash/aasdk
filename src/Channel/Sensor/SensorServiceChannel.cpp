@@ -23,13 +23,7 @@
 #include <f1x/aasdk/Channel/Sensor/SensorServiceChannel.hpp>
 #include <f1x/aasdk/Common/Log.hpp>
 
-namespace f1x
-{
-namespace aasdk
-{
-namespace channel
-{
-namespace sensor
+namespace f1x::aasdk::channel::sensor
 {
 
 SensorServiceChannel::SensorServiceChannel(boost::asio::strand<boost::asio::io_context::executor_type>& strand,  messenger::IMessenger::Pointer messenger)
@@ -125,7 +119,4 @@ void SensorServiceChannel::handleChannelOpenRequest(const common::DataConstBuffe
     }
 }
 
-}
-}
-}
 }

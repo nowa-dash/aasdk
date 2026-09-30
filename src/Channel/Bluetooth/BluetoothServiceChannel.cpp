@@ -23,13 +23,7 @@
 #include <f1x/aasdk/Channel/Bluetooth/BluetoothServiceChannel.hpp>
 #include <f1x/aasdk/Common/Log.hpp>
 
-namespace f1x
-{
-namespace aasdk
-{
-namespace channel
-{
-namespace bluetooth
+namespace f1x::aasdk::channel::bluetooth
 {
 
 BluetoothServiceChannel::BluetoothServiceChannel(boost::asio::strand<boost::asio::io_context::executor_type>& strand, messenger::IMessenger::Pointer messenger)
@@ -116,7 +110,4 @@ void BluetoothServiceChannel::handleBluetoothPairingRequest(const common::DataCo
     }
 }
 
-}
-}
-}
 }

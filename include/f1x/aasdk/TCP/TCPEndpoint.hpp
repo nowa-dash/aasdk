@@ -22,11 +22,7 @@
 #include <f1x/aasdk/TCP/ITCPEndpoint.hpp>
 #include <f1x/aasdk/TCP/ITCPWrapper.hpp>
 
-namespace f1x
-{
-namespace aasdk
-{
-namespace tcp
+namespace f1x::aasdk::tcp
 {
 
 class TCPEndpoint: public ITCPEndpoint, public std::enable_shared_from_this<TCPEndpoint>
@@ -47,6 +43,4 @@ private:
     SocketPointer socket_;
 };
 
-}
-}
 }

@@ -21,15 +21,9 @@
 #include <f1x/aasdk/Messenger/Message.hpp>
 #include <f1x/aasdk/IO/Promise.hpp>
 
-namespace f1x
-{
-namespace aasdk
-{
-namespace channel
+namespace f1x::aasdk::channel
 {
 
 typedef io::Promise<void> SendPromise;
 
-}
-}
 }

@@ -22,13 +22,7 @@
 #include <aasdk_proto/ChannelOpenRequestMessage.pb.h>
 #include <f1x/aasdk/Error/Error.hpp>
 
-namespace f1x
-{
-namespace aasdk
-{
-namespace channel
-{
-namespace sensor
+namespace f1x::aasdk::channel::sensor
 {
 
 class ISensorServiceChannelEventHandler
@@ -44,7 +38,4 @@ public:
     virtual void onChannelError(const error::Error& e) = 0;
 };
 
-}
-}
-}
 }

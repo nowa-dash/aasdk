@@ -28,13 +28,7 @@
 #include <aasdk_proto/NavigationFocusRequestMessage.pb.h>
 #include <aasdk_proto/PingResponseMessage.pb.h>
 
-namespace f1x
-{
-namespace aasdk
-{
-namespace channel
-{
-namespace control
+namespace f1x::aasdk::channel::control
 {
 
 class IControlServiceChannelEventHandler
@@ -56,7 +50,4 @@ public:
     virtual void onChannelError(const error::Error& e) = 0;
 };
 
-}
-}
-}
 }

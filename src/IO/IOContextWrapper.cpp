@@ -18,11 +18,7 @@
 
 #include <f1x/aasdk/IO/IOContextWrapper.hpp>
 
-namespace f1x
-{
-namespace aasdk
-{
-namespace io
+namespace f1x::aasdk::io
 {
 
 IOContextWrapper::IOContextWrapper()
@@ -57,6 +53,4 @@ bool IOContextWrapper::isActive() const
     return ioService_ != nullptr || strand_ != nullptr;
 }
 
-}
-}
 }

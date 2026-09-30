@@ -22,11 +22,7 @@
 #include <f1x/aasdk/USB/AccessoryModeQueryChain.hpp>
 #include <f1x/aasdk/Error/Error.hpp>
 
-namespace f1x
-{
-namespace aasdk
-{
-namespace usb
+namespace f1x::aasdk::usb
 {
 
 USBHub::USBHub(IUSBWrapper& usbWrapper, boost::asio::io_context& ioService, IAccessoryModeQueryChainFactory& queryChainFactory)
@@ -139,6 +135,4 @@ void USBHub::handleDevice(libusb_device* device)
     }
 }
 
-}
-}
 }

@@ -23,11 +23,7 @@
 #include <f1x/aasdk/Error/Error.hpp>
 #include <f1x/aasdk/IO/Promise.hpp>
 
-namespace f1x
-{
-namespace aasdk
-{
-namespace io
+namespace f1x::aasdk::io
 {
 
 template<typename SourceResolveArgumentType = void, typename DestinationResolveArgumentType = void>
@@ -127,6 +123,4 @@ private:
     typename Promise<void>::Pointer promise_;
 };
 
-}
-}
 }

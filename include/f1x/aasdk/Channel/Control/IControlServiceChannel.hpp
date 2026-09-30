@@ -30,13 +30,7 @@
 #include <f1x/aasdk/Channel/Promise.hpp>
 #include <f1x/aasdk/Channel/Control/IControlServiceChannelEventHandler.hpp>
 
-namespace f1x
-{
-namespace aasdk
-{
-namespace channel
-{
-namespace control
+namespace f1x::aasdk::channel::control
 {
 
 class IControlServiceChannel
@@ -60,7 +54,4 @@ public:
     virtual void sendPingRequest(const proto::messages::PingRequest& request, SendPromise::Pointer promise) = 0;
 };
 
-}
-}
-}
 }

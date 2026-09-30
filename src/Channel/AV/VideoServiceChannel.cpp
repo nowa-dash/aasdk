@@ -23,13 +23,7 @@
 #include <f1x/aasdk/Channel/AV/VideoServiceChannel.hpp>
 #include <f1x/aasdk/Common/Log.hpp>
 
-namespace f1x
-{
-namespace aasdk
-{
-namespace channel
-{
-namespace av
+namespace f1x::aasdk::channel::av
 {
 
 VideoServiceChannel::VideoServiceChannel(boost::asio::strand<boost::asio::io_context::executor_type>& strand, messenger::IMessenger::Pointer messenger)
@@ -201,7 +195,4 @@ void VideoServiceChannel::handleAVMediaWithTimestampIndication(const common::Dat
     }
 }
 
-}
-}
-}
 }

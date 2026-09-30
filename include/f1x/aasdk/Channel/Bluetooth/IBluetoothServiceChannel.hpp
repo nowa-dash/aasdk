@@ -25,13 +25,7 @@
 #include <f1x/aasdk/Channel/Promise.hpp>
 #include <f1x/aasdk/Channel/Bluetooth/IBluetoothServiceChannelEventHandler.hpp>
 
-namespace f1x
-{
-namespace aasdk
-{
-namespace channel
-{
-namespace bluetooth
+namespace f1x::aasdk::channel::bluetooth
 {
 
 class IBluetoothServiceChannel
@@ -48,7 +42,4 @@ public:
     virtual messenger::ChannelId getId() const = 0;
 };
 
-}
-}
-}
 }

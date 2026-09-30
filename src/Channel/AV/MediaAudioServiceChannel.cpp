@@ -18,13 +18,7 @@
 
 #include <f1x/aasdk/Channel/AV/MediaAudioServiceChannel.hpp>
 
-namespace f1x
-{
-namespace aasdk
-{
-namespace channel
-{
-namespace av
+namespace f1x::aasdk::channel::av
 {
 
 MediaAudioServiceChannel::MediaAudioServiceChannel(boost::asio::strand<boost::asio::io_context::executor_type>& strand, messenger::IMessenger::Pointer messenger)
@@ -33,7 +27,4 @@ MediaAudioServiceChannel::MediaAudioServiceChannel(boost::asio::strand<boost::as
 
 }
 
-}
-}
-}
 }

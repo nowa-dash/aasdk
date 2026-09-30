@@ -24,11 +24,7 @@
 #include <f1x/aasdk/USB/IUSBHub.hpp>
 #include <f1x/aasdk/USB/IAccessoryModeQueryChainFactory.hpp>
 
-namespace f1x
-{
-namespace aasdk
-{
-namespace usb
+namespace f1x::aasdk::usb
 {
 
 class IUSBWrapper;
@@ -61,6 +57,4 @@ private:
     static constexpr uint16_t cAOAPWithAdbId = 0x2D01;
 };
 
-}
-}
 }

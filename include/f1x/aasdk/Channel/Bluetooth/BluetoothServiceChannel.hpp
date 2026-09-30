@@ -21,13 +21,7 @@
 #include <f1x/aasdk/Channel/ServiceChannel.hpp>
 #include <f1x/aasdk/Channel/Bluetooth/IBluetoothServiceChannel.hpp>
 
-namespace f1x
-{
-namespace aasdk
-{
-namespace channel
-{
-namespace bluetooth
+namespace f1x::aasdk::channel::bluetooth
 {
 
 class BluetoothServiceChannel: public IBluetoothServiceChannel, public ServiceChannel, public std::enable_shared_from_this<BluetoothServiceChannel>
@@ -47,7 +41,4 @@ private:
     void handleBluetoothPairingRequest(const common::DataConstBuffer& payload, IBluetoothServiceChannelEventHandler::Pointer eventHandler);
 };
 
-}
-}
-}
 }

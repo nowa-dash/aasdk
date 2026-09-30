@@ -20,11 +20,7 @@
 
 #include <f1x/aasdk/USB/AccessoryModeQuery.hpp>
 
-namespace f1x
-{
-namespace aasdk
-{
-namespace usb
+namespace f1x::aasdk::usb
 {
 
 class AccessoryModeStartQuery: public AccessoryModeQuery, public std::enable_shared_from_this<AccessoryModeStartQuery>
@@ -39,6 +35,4 @@ private:
     static constexpr uint32_t ACC_REQ_START = 53;
 };
 
-}
-}
 }

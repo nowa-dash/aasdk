@@ -20,11 +20,7 @@
 #include <f1x/aasdk/USB/IUSBWrapper.hpp>
 #include <f1x/aasdk/Error/Error.hpp>
 
-namespace f1x
-{
-namespace aasdk
-{
-namespace usb
+namespace f1x::aasdk::usb
 {
 
 USBEndpoint::USBEndpoint(IUSBWrapper& usbWrapper, boost::asio::io_context& ioService, DeviceHandle handle, uint8_t endpointAddress)
@@ -173,6 +169,4 @@ void USBEndpoint::transferHandler(libusb_transfer *transfer)
     });
 }
 
-}
-}
 }

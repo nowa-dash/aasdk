@@ -23,11 +23,7 @@
 #include <boost/asio.hpp>
 #include <libusb.h>
 
-namespace f1x
-{
-namespace aasdk
-{
-namespace usb
+namespace f1x::aasdk::usb
 {
 
 typedef std::shared_ptr<libusb_device_handle> DeviceHandle;
@@ -78,6 +74,4 @@ public:
     virtual libusb_transfer* allocTransfer(int iso_packets) = 0;
 };
 
-}
-}
 }

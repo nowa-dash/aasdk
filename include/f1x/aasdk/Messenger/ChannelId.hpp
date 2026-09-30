@@ -20,11 +20,7 @@
 
 #include <string>
 
-namespace f1x
-{
-namespace aasdk
-{
-namespace messenger
+namespace f1x::aasdk::messenger
 {
 
 enum class ChannelId
@@ -43,6 +39,4 @@ enum class ChannelId
 
 std::string channelIdToString(ChannelId channelId);
 
-}
-}
 }

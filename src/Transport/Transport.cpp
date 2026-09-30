@@ -18,11 +18,7 @@
 
 #include <f1x/aasdk/Transport/Transport.hpp>
 
-namespace f1x
-{
-namespace aasdk
-{
-namespace transport
+namespace f1x::aasdk::transport
 {
 
 Transport::Transport(boost::asio::io_context& ioService)
@@ -104,6 +100,4 @@ void Transport::send(common::Data data, SendPromise::Pointer promise)
     });
 }
 
-}
-}
 }

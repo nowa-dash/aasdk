@@ -20,11 +20,7 @@
 #include <boost/endian/conversion.hpp>
 #include <f1x/aasdk/Messenger/MessageId.hpp>
 
-namespace f1x
-{
-namespace aasdk
-{
-namespace messenger
+namespace f1x::aasdk::messenger
 {
 
 MessageId::MessageId(uint16_t id):
@@ -86,6 +82,4 @@ std::ostream& operator<<(std::ostream& stream, const f1x::aasdk::messenger::Mess
     return stream;
 }
 
-}
-}
 }

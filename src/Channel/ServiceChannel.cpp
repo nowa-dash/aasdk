@@ -19,11 +19,7 @@
 #include <f1x/aasdk/IO/PromiseLink.hpp>
 #include <f1x/aasdk/Channel/ServiceChannel.hpp>
 
-namespace f1x
-{
-namespace aasdk
-{
-namespace channel
+namespace f1x::aasdk::channel
 {
 
 ServiceChannel::ServiceChannel(boost::asio::strand<boost::asio::io_context::executor_type>& strand,
@@ -43,6 +39,4 @@ void ServiceChannel::send(messenger::Message::Pointer message, SendPromise::Poin
     messenger_->enqueueSend(std::move(message), std::move(sendPromise));
 }
 
-}
-}
 }

@@ -20,11 +20,7 @@
 #include <f1x/aasdk/USB/AccessoryModeStartQuery.hpp>
 #include <f1x/aasdk/USB/USBEndpoint.hpp>
 
-namespace f1x
-{
-namespace aasdk
-{
-namespace usb
+namespace f1x::aasdk::usb
 {
 
 AccessoryModeStartQuery::AccessoryModeStartQuery(boost::asio::io_context& ioService, IUSBWrapper& usbWrapper, IUSBEndpoint::Pointer usbEndpoint)
@@ -60,6 +56,4 @@ void AccessoryModeStartQuery::start(Promise::Pointer promise)
     });
 }
 
-}
-}
 }

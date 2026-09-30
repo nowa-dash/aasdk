@@ -22,13 +22,7 @@
 #include <aasdk_proto/ChannelOpenRequestMessage.pb.h>
 #include <aasdk_proto/BindingRequestMessage.pb.h>
 
-namespace f1x
-{
-namespace aasdk
-{
-namespace channel
-{
-namespace input
+namespace f1x::aasdk::channel::input
 {
 
 class IInputServiceChannelEventHandler
@@ -44,7 +38,4 @@ public:
     virtual void onChannelError(const error::Error& e) = 0;
 };
 
-}
-}
-}
 }

@@ -24,11 +24,7 @@
 #include <f1x/aasdk/IO/Promise.hpp>
 #include <f1x/aasdk/USB/IUSBEndpoint.hpp>
 
-namespace f1x
-{
-namespace aasdk
-{
-namespace usb
+namespace f1x::aasdk::usb
 {
 
 class IAccessoryModeQuery
@@ -44,6 +40,4 @@ public:
     virtual void cancel() = 0;
 };
 
-}
-}
 }
