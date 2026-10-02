@@ -35,5 +35,4 @@ message ServiceDiscoveryResponse
     string sw_build = 9;
     string sw_version = 10;
     bool can_play_native_media_during_vr = 11;
-    bool hide_clock = 12;
 }
